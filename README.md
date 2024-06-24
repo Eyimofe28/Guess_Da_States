@@ -1,1 +1,1 @@
-# Guess_Da_States
+I developed an educational game that allows individuals to guess the states in the US. The game is designed to be interactive and visually engaging, using the turtle graphics library for visual representation and pandas for data handling. Players can input their guesses, and the game provides immediate feedback by displaying the correct guesses on a map. Additionally, the game generates a list of states that players could not guess, so that they can try to learn them.
