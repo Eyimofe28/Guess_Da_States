@@ -28,10 +28,7 @@ while count < 50:
     state_guess = turtle.textinput(title=f"{count}/50 States Correct", prompt="Enter a state in the US: ").title()
 
     if state_guess == "Exit":
-        states_to_learn_list = []
-        for i in the_states:
-            if i not in correct_guesses:
-                states_to_learn_list.append(i)
+        states_to_learn_list = [missed_states for missed_states in the_states if missed_states not in correct_guesses]
 
         states_to_learn_dict = {
             "States To Learn": states_to_learn_list
@@ -46,7 +43,7 @@ while count < 50:
         correct_guesses.append(state_guess)
 
         state_row = the_states_data[the_states_data.state == state_guess]
-        x_coord = int(state_row.x.item())  # I was struggling with an error but this item() method cleared it out.
+        x_coord = int(state_row.x.item())
         y_coord = int(state_row.y.item())  # the item method fetches the actual raw data {i.e, data without index}.
 
         write = turtle.Turtle()
